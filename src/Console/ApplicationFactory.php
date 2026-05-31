@@ -21,32 +21,27 @@ use Throwable;
  */
 final readonly class ApplicationFactory implements FactoryInterface
 {
+    public const array COMMANDS = [];
+
     /** @throws Throwable */
     #[Override]
     public function __invoke(ContainerInterface $container): Application
     {
-        $consoleConfiguration = $container->get(WipConfiguration::class)->wrap('ghostwriter.console');
-
         $application = new Application(
-            $consoleConfiguration->get('name', 'Tulip Console'),
-            InstalledVersions::getPrettyVersion($consoleConfiguration->get('package', 'ghostwriter/tulip'))
+            'Tulip🌷',
+            InstalledVersions::getPrettyVersion('ghostwriter/tulip')
         );
 
-        $application->setAutoExit($consoleConfiguration->get('auto_exit', false));
+        $application->setAutoExit(false);
 
-        $application->setCatchErrors($consoleConfiguration->get('catch_errors', false));
+        $application->setCatchErrors(false);
 
-        $application->setCatchExceptions($consoleConfiguration->get('catch_exceptions', false));
+        $application->setCatchExceptions(false);
 
         $application->setCommandLoader(new ContainerCommandLoader(
             $container->get(PsrContainerInterface::class),
-            $consoleConfiguration->get('commands', [])
+            self::COMMANDS
         ));
-
-        $application->setDefaultCommand(
-            $consoleConfiguration->get('default_command', false),
-            true === $consoleConfiguration->get('single_command', false)
-        );
 
         return $application;
     }
