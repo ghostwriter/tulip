@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Ghostwriter\Wip\Console;
+namespace Ghostwriter\Tulip\Console;
 
 use Composer\InstalledVersions;
 use Ghostwriter\Container\Interface\ContainerInterface;
 use Ghostwriter\Container\Interface\Service\FactoryInterface;
-use Ghostwriter\Wip\Configuration\WipConfiguration;
+use Ghostwriter\Tulip\Configuration\WipConfiguration;
 use Override;
 use Psr\Container\ContainerInterface as PsrContainerInterface;
 use Symfony\Component\Console\Application;
@@ -28,8 +28,8 @@ final readonly class ApplicationFactory implements FactoryInterface
         $consoleConfiguration = $container->get(WipConfiguration::class)->wrap('ghostwriter.console');
 
         $application = new Application(
-            $consoleConfiguration->get('name', 'Wip Console'),
-            InstalledVersions::getPrettyVersion($consoleConfiguration->get('package', 'ghostwriter/wip'))
+            $consoleConfiguration->get('name', 'Tulip Console'),
+            InstalledVersions::getPrettyVersion($consoleConfiguration->get('package', 'ghostwriter/tulip'))
         );
 
         $application->setAutoExit($consoleConfiguration->get('auto_exit', false));

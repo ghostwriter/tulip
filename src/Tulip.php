@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace Ghostwriter\Wip;
+namespace Ghostwriter\Tulip;
 
 use Ghostwriter\Container\Container;
-use Ghostwriter\Wip\Interface\WipInterface;
+use Ghostwriter\Tulip\Interface\TulipInterface;
 use Symfony\Component\Console\Application;
 use Symfony\Component\Console\Input\ArgvInput;
 use Throwable;
 
-/** @see WipTest */
-final readonly class Wip implements WipInterface
+/** @see TulipTest */
+final readonly class Tulip implements TulipInterface
 {
     public function __construct(
         private Application $application,

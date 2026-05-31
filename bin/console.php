@@ -3,7 +3,7 @@
 
 declare(strict_types=1);
 
-use Ghostwriter\Wip\Wip;
+use Ghostwriter\Tulip\Tulip;
 
 /** @var ?string $_composer_autoload_path */
 (static function (string $autoloader): void {
@@ -22,7 +22,7 @@ use Ghostwriter\Wip\Wip;
     \restore_error_handler();
 
     /** #BlackLivesMatter. */
-    exit(Wip::new()->run($_SERVER['argv'] ?? []));
+    exit(Tulip::new()->run($_SERVER['argv'] ?? []));
 })(
     $_composer_autoload_path ?? \implode(\DIRECTORY_SEPARATOR, [\dirname(__DIR__), 'vendor', 'autoload.php'])
 );

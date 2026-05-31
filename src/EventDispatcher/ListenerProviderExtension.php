@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Ghostwriter\Wip\EventDispatcher;
+namespace Ghostwriter\Tulip\EventDispatcher;
 
 use Ghostwriter\Container\Interface\ContainerInterface;
 use Ghostwriter\Container\Interface\Service\ExtensionInterface;
 use Ghostwriter\EventDispatcher\Interface\ListenerProviderInterface;
-use Ghostwriter\Wip\Configuration\WipConfiguration;
+use Ghostwriter\Tulip\Configuration\TulipConfiguration;
 use Override;
 use Throwable;
 
@@ -30,14 +30,14 @@ final readonly class ListenerProviderExtension implements ExtensionInterface
     {
         assert($service instanceof ListenerProviderInterface);
 
-        $configuration = $container->get(WipConfiguration::class);
+        // $configuration = $container->get(TulipConfiguration::class);
 
-        assert($configuration instanceof WipConfiguration);
-        /** @var list<class-string> $listeners */
-        foreach ($configuration->get('ghostwriter.event-dispatcher', []) as $event => $listeners) {
-            foreach ($listeners as $listener) {
-                $service->listen($event, $listener);
-            }
-        }
+        // assert($configuration instanceof TulipConfiguration);
+        // /** @var list<class-string> $listeners */
+        // foreach ($configuration->get('ghostwriter.event-dispatcher', []) as $event => $listeners) {
+        //     foreach ($listeners as $listener) {
+        //         $service->listen($event, $listener);
+        //     }
+        // }
     }
 }

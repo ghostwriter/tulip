@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Tests\Unit\Console;
 
 use Ghostwriter\Container\Interface\Service\FactoryInterface;
-use Ghostwriter\Wip\Console\ApplicationFactory;
+use Ghostwriter\Tulip\Console\ApplicationFactory;
 use PHPUnit\Framework\Attributes\CoversClass;
 use Tests\Unit\AbstractTestCase;
 

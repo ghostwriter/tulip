@@ -8,44 +8,44 @@ use Ghostwriter\Config\Interface\ConfigurationInterface;
 use Ghostwriter\Container\Interface\BuilderInterface;
 use Ghostwriter\Container\Service\Provider\AbstractProvider;
 use Ghostwriter\EventDispatcher\Interface\ListenerProviderInterface;
-use Ghostwriter\Wip\Configuration\WipConfiguration;
-use Ghostwriter\Wip\Console\ApplicationFactory;
-use Ghostwriter\Wip\Container\WipProvider;
-use Ghostwriter\Wip\EventDispatcher\ListenerProviderExtension;
-use Ghostwriter\Wip\Interface\WipInterface;
-use Ghostwriter\Wip\Wip;
+use Ghostwriter\Tulip\Configuration\TulipConfiguration;
+use Ghostwriter\Tulip\Console\ApplicationFactory;
+use Ghostwriter\Tulip\Container\TulipProvider;
+use Ghostwriter\Tulip\EventDispatcher\ListenerProviderExtension;
+use Ghostwriter\Tulip\Interface\TulipInterface;
+use Ghostwriter\Tulip\Tulip;
 use PHPUnit\Framework\Attributes\CoversClass;
 use Symfony\Component\Console\Application;
 use Tests\Unit\AbstractTestCase;
 
 use function is_a;
 
-#[CoversClass(WipProvider::class)]
-final class WipProviderTest extends AbstractTestCase
+#[CoversClass(TulipProvider::class)]
+final class TulipProviderTest extends AbstractTestCase
 {
     public function testExtendsAbstractProvider(): void
     {
-        self::assertTrue(is_a(WipProvider::class, AbstractProvider::class, true));
+        self::assertTrue(is_a(TulipProvider::class, AbstractProvider::class, true));
     }
 
-    public function testWipProviderRegister(): void
+    public function testTulipProviderRegister(): void
     {
         $builder = $this->createMock(BuilderInterface::class);
 
         $builder->expects(self::exactly(1))
             ->method('set')
             ->withParameterSetsInOrder([
-                WipConfiguration::class,
+                TulipConfiguration::class,
                 self::callback(
-                    static fn (ConfigurationInterface $configuration): bool => $configuration instanceof WipConfiguration
+                    static fn (ConfigurationInterface $configuration): bool => $configuration instanceof TulipConfiguration
                 ),
             ]);
 
         $builder->expects(self::exactly(2))
             ->method('alias')
             ->withParameterSetsInOrder(
-                [WipInterface::class, Wip::class],
-                [ConfigurationInterface::class, WipConfiguration::class],
+                [TulipInterface::class, Tulip::class],
+                [ConfigurationInterface::class, TulipConfiguration::class],
             );
 
         $builder->expects(self::exactly(1))
@@ -57,6 +57,6 @@ final class WipProviderTest extends AbstractTestCase
             ->withParameterSetsInOrder([Application::class, ApplicationFactory::class])
             ->seal();
 
-        (new WipProvider())->register($builder);
+        (new TulipProvider())->register($builder);
     }
 }

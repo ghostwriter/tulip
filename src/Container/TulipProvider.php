@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Ghostwriter\Wip\Container;
+namespace Ghostwriter\Tulip\Container;
 
 use Ghostwriter\Config\Interface\ConfigurationInterface;
 use Ghostwriter\Container\Interface\BuilderInterface;
@@ -10,11 +10,11 @@ use Ghostwriter\Container\Interface\Service\ExtensionInterface;
 use Ghostwriter\Container\Interface\Service\FactoryInterface;
 use Ghostwriter\Container\Service\Provider\AbstractProvider;
 use Ghostwriter\EventDispatcher\Interface\ListenerProviderInterface;
-use Ghostwriter\Wip\Configuration\WipConfiguration;
-use Ghostwriter\Wip\Console\ApplicationFactory;
-use Ghostwriter\Wip\EventDispatcher\ListenerProviderExtension;
-use Ghostwriter\Wip\Interface\WipInterface;
-use Ghostwriter\Wip\Wip;
+use Ghostwriter\Tulip\Configuration\TulipConfiguration;
+use Ghostwriter\Tulip\Console\ApplicationFactory;
+use Ghostwriter\Tulip\EventDispatcher\ListenerProviderExtension;
+use Ghostwriter\Tulip\Interface\TulipInterface;
+use Ghostwriter\Tulip\Tulip;
 use Override;
 use Symfony\Component\Console\Application;
 use Throwable;
@@ -27,9 +27,9 @@ use function implode;
 use function is_dir;
 
 /**
- * @see WipProviderTest
+ * @see TulipProviderTest
  */
-final class WipProvider extends AbstractProvider
+final class TulipProvider extends AbstractProvider
 {
     /**
      * alias => service.
@@ -37,8 +37,7 @@ final class WipProvider extends AbstractProvider
      * @var array<class-string,class-string>
      */
     public const array ALIAS = [
-        WipInterface::class => Wip::class,
-        ConfigurationInterface::class => WipConfiguration::class,
+        TulipInterface::class => Tulip::class,
     ];
 
     /**
@@ -58,18 +57,4 @@ final class WipProvider extends AbstractProvider
     public const array FACTORY = [
         Application::class => ApplicationFactory::class,
     ];
-
-    /** @throws Throwable */
-    #[Override]
-    public function register(BuilderInterface $builder): void
-    {
-        $builder->set(WipConfiguration::class, $wipConfiguration = WipConfiguration::new());
-
-        $configDirectory = implode(DIRECTORY_SEPARATOR, [dirname(__DIR__, 2), 'config']);
-        assert(is_dir($configDirectory), 'Expected configuration directory to exist at path: ' . $configDirectory);
-
-        $wipConfiguration->mergeDirectory($configDirectory);
-
-        parent::register($builder);
-    }
 }

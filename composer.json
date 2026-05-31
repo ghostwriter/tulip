@@ -5,7 +5,12 @@
     "type": "library",
     "keywords": [
         "ghostwriter",
-        "tulip"
+        "tulip",
+        "branching-model",
+        "cli",
+        "git-workflow",
+        "git",
+        "workflow"
     ],
     "authors": [
         {
@@ -63,7 +68,7 @@
         "ghostwriter/phpunit-assertions": "^0.1.0",
         "ghostwriter/testify": "^0.1.2",
         "mockery/mockery": "^1.6.12",
-        "phpunit/phpunit": "^13.1.12",
+        "phpunit/phpunit": "^13.1.13",
         "symfony/var-dumper": "^8.1.0"
     },
     "prefer-stable": true,
@@ -84,8 +89,8 @@
         ]
     },
     "bin": [
-        "bin/console",
-        "bin/console.php"
+        "bin/tulip",
+        "bin/tulip.php"
     ],
     "config": {
         "allow-plugins": {
