@@ -1,6 +1,6 @@
 {
     "name": "ghostwriter/tulip",
-    "description": "A CLI for managing version-based Git workflows and branching model.",
+    "description": "Tulip🌷 - A CLI for managing version-based Git workflows and branching model.",
     "license": "BSD-3-Clause",
     "type": "library",
     "keywords": [
