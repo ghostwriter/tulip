@@ -1,11 +1,11 @@
 {
-    "name": "ghostwriter/wip",
-    "description": "Here be dragons",
+    "name": "ghostwriter/tulip",
+    "description": "A CLI for managing version-based Git workflows and branching model.",
     "license": "BSD-3-Clause",
     "type": "library",
     "keywords": [
         "ghostwriter",
-        "wip"
+        "tulip"
     ],
     "authors": [
         {
@@ -15,12 +15,12 @@
             "role": "Developer"
         }
     ],
-    "homepage": "https://github.com/ghostwriter/wip",
+    "homepage": "https://github.com/ghostwriter/tulip",
     "support": {
-        "issues": "https://github.com/ghostwriter/wip/issues",
-        "source": "https://github.com/ghostwriter/wip",
-        "rss": "https://github.com/ghostwriter/wip/releases.atom",
-        "security": "https://github.com/ghostwriter/wip/security/advisories/new"
+        "issues": "https://github.com/ghostwriter/tulip/issues",
+        "source": "https://github.com/ghostwriter/tulip",
+        "rss": "https://github.com/ghostwriter/tulip/releases.atom",
+        "security": "https://github.com/ghostwriter/tulip/security/advisories/new"
     },
     "funding": [
         {
@@ -69,7 +69,7 @@
     "prefer-stable": true,
     "autoload": {
         "psr-4": {
-            "Ghostwriter\\Wip\\": "src"
+            "Ghostwriter\\Tulip\\": "src"
         }
     },
     "autoload-dev": {
@@ -127,13 +127,13 @@
         "ghostwriter": {
             "container": {
                 "provider": [
-                    "Ghostwriter\\Wip\\Container\\WipProvider"
+                    "Ghostwriter\\Tulip\\Container\\TulipProvider"
                 ]
             }
         },
         "thanks": {
-            "name": "ghostwriter/wip",
-            "url": "https://github.com/ghostwriter/wip"
+            "name": "ghostwriter/tulip",
+            "url": "https://github.com/ghostwriter/tulip"
         }
     },
     "scripts": {
