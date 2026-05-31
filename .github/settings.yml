@@ -7,7 +7,7 @@
     "state": "open"
 "repository":
   "name": "tulip"
-  "description": "[TULIP] Here be dragons"
+  "description": "[WIP] A CLI for managing version-based Git workflows and branching model"
   "homepage": "https://github.com/ghostwriter/tulip"
   "default_branch": "0.1.x"
   "allow_auto_merge": true
