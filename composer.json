@@ -6,9 +6,8 @@
     "keywords": [
         "ghostwriter",
         "tulip",
-        "branching-model",
         "cli",
-        "git-workflow",
+        "dev",
         "git",
         "workflow"
     ],
@@ -33,7 +32,7 @@
             "url": "https://github.com/sponsors/ghostwriter"
         },
         {
-            "type": "other",
+            "type": "paypal",
             "url": "https://paypal.me/codepoet"
         }
     ],

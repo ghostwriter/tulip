@@ -6,11 +6,14 @@ namespace Ghostwriter\Tulip;
 
 use Ghostwriter\Container\Container;
 use Ghostwriter\Tulip\Interface\TulipInterface;
+use Override;
 use Symfony\Component\Console\Application;
 use Symfony\Component\Console\Input\ArgvInput;
 use Throwable;
 
-/** @see TulipTest */
+/**
+ * @see TulipTest
+ */
 final readonly class Tulip implements TulipInterface
 {
     public function __construct(
@@ -23,6 +26,7 @@ final readonly class Tulip implements TulipInterface
     }
 
     /** @throws Throwable */
+    #[Override]
     public function run(array $arguments = []): int
     {
         return $this->application->run(new ArgvInput($arguments));

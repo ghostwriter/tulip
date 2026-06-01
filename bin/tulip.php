@@ -19,10 +19,12 @@ use Ghostwriter\Tulip\Tulip;
 
     require $autoloader;
 
+    /** #BlackLivesMatter. */
+    $exitCode = Tulip::new()->run($_SERVER['argv'] ?? []);
+
     \restore_error_handler();
 
-    /** #BlackLivesMatter. */
-    exit(Tulip::new()->run($_SERVER['argv'] ?? []));
+    exit($exitCode);
 })(
     $_composer_autoload_path ?? \implode(\DIRECTORY_SEPARATOR, [\dirname(__DIR__), 'vendor', 'autoload.php'])
 );
