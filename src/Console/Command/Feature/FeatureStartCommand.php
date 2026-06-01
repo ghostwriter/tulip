@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Ghostwriter\Tulip\Console\Command\Feature;
 
-use Ghostwriter\Tulip\Console\Command\Feature\AbstractFeatureCommand;
 use Ghostwriter\Tulip\EventDispatcher\Event\FeatureStartedEvent;
 use Ghostwriter\Tulip\EventDispatcher\Event\FeatureStartEvent;
 use Override;

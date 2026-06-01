@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Ghostwriter\Tulip\Console\Command\Bugfix;
 
-use Ghostwriter\Tulip\Console\Command\Bugfix\AbstractBugfixCommand;
 use Ghostwriter\Tulip\EventDispatcher\Event\BugfixFinishedEvent;
 use Ghostwriter\Tulip\EventDispatcher\Event\BugfixFinishEvent;
 use Override;
