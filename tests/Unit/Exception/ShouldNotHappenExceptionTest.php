@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Tests\Unit\Exception;
 
 use Ghostwriter\Tulip\Exception\ShouldNotHappenException;
-use Ghostwriter\Tulip\Interface\ExceptionInterface;
+use Ghostwriter\Tulip\Interface\TulipExceptionInterface;
 use LogicException;
 use PHPUnit\Framework\Attributes\CoversClass;
 use Tests\Unit\AbstractTestCase;
@@ -26,6 +26,6 @@ final class ShouldNotHappenExceptionTest extends AbstractTestCase
     /** @throws Throwable */
     public function testImplementsExceptionInterface(): void
     {
-        self::assertTrue(is_a(ShouldNotHappenException::class, ExceptionInterface::class, true));
+        self::assertTrue(is_a(ShouldNotHappenException::class, TulipExceptionInterface::class, true));
     }
 }
