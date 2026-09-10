@@ -50,7 +50,7 @@
         "ghostwriter/clock": "^3.0.2",
         "ghostwriter/collection": "^2.1.1",
         "ghostwriter/config": "^2.1.3",
-        "ghostwriter/console": "^0.2.3",
+        "ghostwriter/console": "^0.2.4",
         "ghostwriter/container": "^7.0.2",
         "ghostwriter/event-dispatcher": "^6.1.3",
         "ghostwriter/filesystem": "^0.2.1",
@@ -66,11 +66,11 @@
     },
     "require-dev": {
         "ext-xdebug": "*",
-        "boundwize/structarmed": "^0.16.31",
+        "boundwize/structarmed": "^0.17.3",
         "ghostwriter/coding-standard": "dev-main",
         "ghostwriter/phpunit-assertions": "^0.1.1",
         "mockery/mockery": "^1.6.15",
-        "phpunit/phpunit": "^13.3.2"
+        "phpunit/phpunit": "^13.3.3"
     },
     "prefer-stable": true,
     "autoload": {
